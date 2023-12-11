@@ -58,3 +58,7 @@ meansPerSubjectAndActivity <-
   trainANDtest3 %>%
   group_by(subject, activity) %>% # here we group by subject and activity
   summarize_all(mean) # here we calculate the means for all other variables
+
+# write the data to data tables
+write.table(trainANDtest3, file="tidyUCI_HAR_Dataset")
+write.table(meansPerSubjectAndActivity, file="groupedUCI_HAR_Dataset")
